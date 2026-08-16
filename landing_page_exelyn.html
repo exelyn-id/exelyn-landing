@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exelyn - Official Links & Products</title>
+    <!-- Menggunakan font Poppins agar terlihat modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --card-bg: #ffffff;
+            --accent-color: #000000; /* Warna tombol ala TikTok */
+            --accent-hover: #374151;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px; /* Lebar maksimal dioptimalkan untuk mobile */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Bagian Header / Profil */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--card-bg);
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+        }
+
+        .username {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Bagian Daftar Produk */
+        .products-grid {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem; /* Jarak antar produk */
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Efek saat card diklik/ditekan */
+        .product-card:active, .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e5e7eb;
+        }
+
+        .product-content {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .product-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+        
+        .action-button {
+            margin-top: 0.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: background-color 0.2s;
+        }
+
+        .product-card:active .action-button, .product-card:hover .action-button {
+            background-color: var(--accent-hover);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 3rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER: Profil Exelyn -->
+        <header class="header">
+            <!-- Ganti src di bawah dengan link foto profil TikTok Anda -->
+            <img src="assets/excelpp.png" alt="Profil Exelyn" class="profile-pic">
+            <h1 class="username">@exelyn.id</h1>
+            <p class="bio">Temukan produk dan rekomendasi terbaikku di bawah ini! 👇</p>
+        </header>
+
+        <!-- DAFTAR PRODUK -->
+        <main class="products-grid">
+            
+            <!-- BLOCK PRODUK 1 -->
+            <!-- Ganti href dengan link tujuan produk/jasa yang diinginkan -->
+            <a href="https://wa.me/6285829385062?text=Halo%20Exelyn%2C%20saya%20mau%20pesen%20jasa%20Excelnya" target="_blank" class="product-card">
+                <!-- Ganti src dengan link gambar sampul produk Anda -->
+                <img src="assets/jasa_custom.png" alt="Produk 1" class="product-image">
+                <div class="product-content">
+                    <h2 class="product-title">Jasa Pengerjaan File Excel</h2>
+                    <p class="product-desc">Jasa bikin dashboard/template/rapihin data mentah excel, durasi pengerjaan hitungan jam.</p>
+                    <div class="action-button">Saya Mau</div>
+                </div>
+            </a>
+
+            <!-- BLOCK PRODUK 2 -->
+            <a href="http://lynk.id/exelyn.id/6vxyw5ew469r" target="_blank" class="product-card">
+                <img src="assets/ecourse.png" alt="Produk 2" class="product-image">
+                <div class="product-content">
+                    <h2 class="product-title">Ecourse Shortcut Excel + Grup WA Eksklusif</h2>
+                    <p class="product-desc">Berisi link grup WhatsApp untuk bertanya/diskusi, puluhan video tutorial, puluhan file latihan, dan ebook.</p>
+                    <div class="action-button">Lihat Detail</div>
+                </div>
+            </a>
+
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Exelyn. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
