@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exelyn - Official Links & Products</title>
-    <!-- Menggunakan font Poppins agar terlihat modern -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Exelyn - Automasi & AI</title>
+    <!-- Menggunakan font Poppins agar tetap modern, namun dengan variasi ketebalan yang lebih tegas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f3f4f6;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --card-bg: #ffffff;
-            --accent-color: #000000; /* Warna tombol ala TikTok */
-            --accent-hover: #374151;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            /* Palet warna yang disesuaikan dengan exelyn_logo.png */
+            --bg-color: #050505; /* Hitam pekat */
+            --text-main: #f3f4f6; /* Putih cerah untuk keterbacaan */
+            --text-muted: #9ca3af; /* Abu-abu untuk teks deskripsi */
+            --card-bg: linear-gradient(145deg, #1a1a1a, #0d0d0d); /* Efek metalik gelap */
+            --card-border: #2a2a2a;
+            --accent-gradient: linear-gradient(90deg, #d30000, #ff5e00); /* Merah ke oranye menyala */
+            --accent-glow: rgba(255, 68, 0, 0.4);
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
         }
 
         * {
@@ -26,6 +28,9 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
+            /* Menambahkan efek cahaya samar di latar belakang atas */
+            background-image: radial-gradient(circle at top center, rgba(138, 0, 0, 0.15) 0%, transparent 50%);
+            background-attachment: fixed;
             color: var(--text-main);
             display: flex;
             justify-content: center;
@@ -36,7 +41,7 @@
 
         .container {
             width: 100%;
-            max-width: 480px; /* Lebar maksimal dioptimalkan untuk mobile */
+            max-width: 480px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -49,19 +54,25 @@
         }
 
         .profile-pic {
-            width: 96px;
-            height: 96px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--card-bg);
-            box-shadow: var(--shadow);
+            /* Border dan efek glow merah ala logo */
+            border: 3px solid #ff2a00;
+            box-shadow: 0 0 20px var(--accent-glow);
             margin-bottom: 1rem;
         }
 
         .username {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 1.35rem;
+            font-weight: 800; /* Lebih tebal agar terlihat bold dan techy */
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 0.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .bio {
@@ -74,32 +85,41 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 1.25rem; /* Jarak antar produk */
+            gap: 1.25rem;
         }
 
         .product-card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
             border-radius: 16px;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
             box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s ease; /* Transisi diperhalus */
             display: flex;
             flex-direction: column;
         }
 
-        /* Efek saat card diklik/ditekan */
+        /* Efek saat card diklik/ditekan (Interaksi Glow) */
         .product-card:active, .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+            border-color: #ff2a00;
+            box-shadow: 0 8px 25px var(--accent-glow);
         }
 
         .product-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #e5e7eb;
+            background-color: #111;
+            /* Opsional: Membuat gambar sedikit gelap, akan terang saat dihover */
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:active .product-image, .product-card:hover .product-image {
+            opacity: 1;
         }
 
         .product-content {
@@ -120,19 +140,22 @@
         }
         
         .action-button {
-            margin-top: 0.5rem;
-            background-color: var(--accent-color);
+            margin-top: 0.75rem;
+            background: var(--accent-gradient);
             color: white;
             text-align: center;
             padding: 0.75rem;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 0.875rem;
-            transition: background-color 0.2s;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(211, 0, 0, 0.3);
+            transition: opacity 0.2s;
         }
 
         .product-card:active .action-button, .product-card:hover .action-button {
-            background-color: var(--accent-hover);
+            opacity: 0.9;
         }
 
         /* Footer */
@@ -141,6 +164,7 @@
             font-size: 0.75rem;
             color: var(--text-muted);
             text-align: center;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -149,41 +173,49 @@
     <div class="container">
         <!-- HEADER: Profil Exelyn -->
         <header class="header">
-            <!-- Ganti src di bawah dengan link foto profil TikTok Anda -->
-            <img src="assets/excelpp.png" alt="Profil Exelyn" class="profile-pic">
+            <!-- Ganti src di bawah dengan logo exelyn_logo.png atau foto profil barumu -->
+            <img src="exelyn_logo.png" alt="Profil Exelyn" class="profile-pic">
             <h1 class="username">@exelyn.id</h1>
-            <p class="bio">Temukan produk dan rekomendasi terbaikku di bawah ini! 👇</p>
+            <p class="bio">Level Up Your Work with AI & Automation ⚡️</p>
         </header>
 
         <!-- DAFTAR PRODUK -->
         <main class="products-grid">
             
             <!-- BLOCK PRODUK 1 -->
-            <!-- Ganti href dengan link tujuan produk/jasa yang diinginkan -->
-            <a href="https://wa.me/6285829385062?text=Halo%20Exelyn%2C%20saya%20mau%20pesen%20jasa%20Excelnya" target="_blank" class="product-card">
-                <!-- Ganti src dengan link gambar sampul produk Anda -->
-                <img src="assets/jasa_custom.png" alt="Produk 1" class="product-image">
+            <a href="https://wa.me/6285829385062?text=Halo%20Exelyn%2C%20saya%20mau%20pesen%20jasa%20Automasi" target="_blank" class="product-card">
+                <img src="assets/jasa_custom.png" alt="Produk A" class="product-image">
                 <div class="product-content">
-                    <h2 class="product-title">Jasa Pengerjaan File Excel</h2>
-                    <p class="product-desc">Jasa bikin dashboard/template/rapihin data mentah excel, durasi pengerjaan hitungan jam.</p>
-                    <div class="action-button">Saya Mau</div>
+                    <h2 class="product-title">Jasa Buat Web App (Promo Pukul Rata Rp99k)</h2>
+                    <p class="product-desc">Jasa pembuatan web app custom tingkat advance berbasis Apps Script dan Google Sheets, estimasi selesai 1 hari (Harga Rp99k hanya untuk 20 pemesan saja).</p>
+                    <div class="action-button">Mau Dibuatin</div>
                 </div>
             </a>
 
             <!-- BLOCK PRODUK 2 -->
             <a href="http://lynk.id/exelyn.id/6vxyw5ew469r" target="_blank" class="product-card">
-                <img src="assets/ecourse.png" alt="Produk 2" class="product-image">
+                <img src="assets/ecourse.png" alt="Produk B" class="product-image">
                 <div class="product-content">
-                    <h2 class="product-title">Ecourse Shortcut Excel + Grup WA Eksklusif</h2>
-                    <p class="product-desc">Berisi link grup WhatsApp untuk bertanya/diskusi, puluhan video tutorial, puluhan file latihan, dan ebook.</p>
-                    <div class="action-button">Lihat Detail</div>
+                    <h2 class="product-title">Tools Pembuat Prompt Web App (GRATIS)</h2>
+                    <p class="product-desc">Tools untuk membuat Mega Prompt yang akan digunakan dalam membuat web app berbasis Apps Script dan Google Sheet, hemat waktu belasan jam!</p>
+                    <div class="action-button">Saya Mau!</div>
                 </div>
             </a>
 
+            <!-- BLOCK PRODUK 3 -->
+            <a href="http://lynk.id/exelyn.id/6vxyw5ew469r" target="_blank" class="product-card">
+                <img src="assets/ecourse.png" alt="Produk C" class="product-image">
+                <div class="product-content">
+                    <h2 class="product-title">Web App Mastery Class + Grup WA</h2>
+                    <p class="product-desc">Belajar Web App Langsung dari nol sampai mahir bersama Exelyn! Ada sesi zoom meeting tiap minggu + grup WA eksklusif!</p>
+                    <div class="action-button">Ikut! (Slot Terbatas)</div>
+                </div>
+            </a>
+            
         </main>
 
         <footer class="footer">
-            <p>&copy; 2026 Exelyn. All rights reserved.</p>
+            <p>&copy; 2026 Exelyn AI. All rights reserved.</p>
         </footer>
     </div>
 
